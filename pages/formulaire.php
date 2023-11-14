@@ -5,12 +5,12 @@
 </head>
 <link rel="stylesheet" type="text/css" href="../style css/style2.css" />
 <body>
-    <form method='post' action=''>
+    <form method='post' action='../utils/results.php'>
         <h2>Remplissez les adresses</h2>
         <hr>
         <div1 class="name-field">
         <?php
-        // Formulaire permettant d'enregistrer un nouvel utilisateur en fonction des adresses entrées
+             // Formulaire permettant d'enregistrer un nouvel utilisateur en fonction des adresses entrées
         $nbAdresses = $_POST['nb_adresses'];
         for ($i = 1; $i <= $nbAdresses; $i++) {
             echo "<br><br><h3>Address $i :</h3>
