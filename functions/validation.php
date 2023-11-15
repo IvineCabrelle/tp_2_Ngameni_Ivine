@@ -1,4 +1,5 @@
 <?php
+
 function  streetIsValid(string $street): array
 {
     $result = [
