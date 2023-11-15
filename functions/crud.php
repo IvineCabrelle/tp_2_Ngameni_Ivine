@@ -64,3 +64,13 @@ function deleteUser(int $id)
         $result = mysqli_stmt_execute($stmt);
     }
 }
+function getUserById(int $id)
+{
+    global $conn;
+    $result = mysqli_query($conn, "SELECT * FROM address WHERE id = " . $id);
+
+    // avec fetch row : tableau indexé
+    $data = mysqli_fetch_assoc($result);
+
+    return $data;
+}
