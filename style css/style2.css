@@ -33,7 +33,7 @@ hr {
   height: 1px;
   width: 100%;
 }
-input [type="submit"] {
+button {
   padding: 15px 25px;
   border: none;
   border-radius: 5px;
@@ -52,9 +52,20 @@ p {
 p,
 a {
   text-decoration: 0;
-  color: #17a2b8;
+  color: black;
 }
 p,
 a:hover {
   text-decoration: underline;
+}
+.name-field div {
+  width: 100px;
+  margin: 10px 0;
+  outline: none;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  font-size: 10px;
+  font-weight: bold;
+  border-bottom: 1px #ffff solid;
 }
