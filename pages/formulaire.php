@@ -46,7 +46,9 @@
         <br><br> </div>
         ";
         }?>
+        <a href="../index.php">Retour</a>
         <button type="submit">S'inscrire</button>
+        
         </div1>
     </form>  
 </body>
