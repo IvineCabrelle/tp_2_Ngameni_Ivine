@@ -15,7 +15,7 @@
         <label>Nombre d'adresses : </label>
         <input
           type="number"
-          name="nb_adresses"
+          name="address"
           min="1"
           max="10"
           id="address"
