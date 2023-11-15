@@ -14,9 +14,6 @@
         $nbAdresses = $_POST['nb_adresses'];
         for ($i = 1; $i <= $nbAdresses; $i++) {
             echo "<br><br><h3>Address $i :</h3>
-            <div>
-        <label for='id'>id:</label>
-        <input type='number' name='id $i' id='id' maxlength='50' required /><br><br></div>
         <div>
         <label for='street'>Street:</label> 
         <input type='text' name='street $i' id='street' maxlength='50' required /><br><br> </div>
@@ -25,14 +22,14 @@
         <input type='number' name='street_nb $i' id='street_nb' required /><br><br> </div>
         <div>
         <label for='type'>Type:</label>
-        <select name='type' id='type $i' required >
+        <select name='type $i' id='type ' required >
             <option value='livraison'>Livraison</option>
             <option value='facturation'>Facturation</option>
             <option value='autre'>Autre</option>
         </select><br><br> </div>
         <div>
         <label for='city'>City:</label>
-        <select name='city' id='city $i' required >
+        <select name='city $i' id='city ' required >
             <option value='Montréal'>Montréal</option>
             <option value='Laval'>Laval</option>
             <option value='Toronto'>Toronto</option>
