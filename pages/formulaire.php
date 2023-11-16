@@ -7,11 +7,13 @@
 <body>
     <form method='post' action='../utils/results.php'>
         <h2>Remplissez les adresses</h2>
-        <hr>
-        <div1 class="name-field">
+        <hr><?php
+         $nb_adresses = $_POST['nb_adresses'];?>
+        <div1 class="name-field"></div1>
+            <label for='valeur' >Nombre de champs</label>>
+            <input type='number' name='valeur' id='valeur' value= "<?php echo "$nb_adresses"?>"
         <?php
 // Formulaire permettant d'enregistrer un nouvel utilisateur en fonction des adresses entrées
-        $nb_adresses = $_POST['nb_adresses'];
         for ($i = 1; $i <= $nb_adresses; $i++) {
             echo "<br><br><h3>Address $i :</h3> 
         <div>
