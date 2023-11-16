@@ -1,4 +1,5 @@
 <?php
+require_once('../functions/crud.php');
 $server = 'localhost';
 $userName = "root";
 $pwd = "";
@@ -13,5 +14,4 @@ if ($conn) {
 } else {
     echo "Error : Not connected to the $db database";
 }
-if ($server['re'])
 ?>
