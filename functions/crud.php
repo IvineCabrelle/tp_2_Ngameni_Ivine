@@ -1,10 +1,7 @@
 <?php
 function create($data){
     global $conn;
-    $query ="INSERT INTO 'address' ('id','street','street_nb','type','city','zipcode') VALUES (NULL,".$data['street'].", ".$data['street_nb'].", ".$data['type'].",".$data['city']."".$data['zipcode'].");";
-    if ($conn  !== TRUE) {
-        echo "Erreur lors de l'insertion dans la base de données : " . $conn;
-    } 
+    $query ="INSERT INTO address ('id','street','street_nb','type','city','zipcode') VALUES (NULL,".$data['street'].", ".$data['street_nb'].", ".$data['type'].",".$data['city']."".$data['zipcode'].");";
     $result =mysqli_query($conn,$query);
 
 }
@@ -67,13 +64,4 @@ function deleteAddress(int $id)
         $result = mysqli_stmt_execute($stmt);
     }
 }
- // Fonction pour enregistrer les données dans la base de données
- function saveToDatabase($conn, $address) {
-    $street = $conn->real_escape_string($address['street']);
-    $street_nb = $conn->real_escape_string($address['street_nb']);
-    $type = $conn->real_escape_string($address['type']);
-    $city = $conn->real_escape_string($address['city']);
-    $zipcode = $conn->real_escape_string($address['zipcode']);
-
-    insertInstanceIntoTable($conn, $street, $street_nb, $type, $city, $zipcode);
- }
+ 
