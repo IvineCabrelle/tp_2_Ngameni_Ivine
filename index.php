@@ -7,17 +7,18 @@
   </head>
   <link rel="stylesheet" type="text/css" href="./style css/style.css" />
   <body>
-    <form method="post" action="./pages/formulaire.php">
+    <form method="post" action="./pages/formulaire.php" name="form">
       <h1>Connexion d'adresses</h1>
       <p class="choix_adresse">Combien d'adresses avez-vous?</p>
       <br />
       <div class="input">
-        <label>Nombre d'adresses : </label>
+        <label for='address'>Nombre d'adresses : </label>
         <input
           type="number"
-          name="nb_adresses"
+          name="address"
           min="1"
           max="10"
+          id="address"
           placeholder="veuillez saisir les informations sur le nombe d'adresses"
           required
         />
