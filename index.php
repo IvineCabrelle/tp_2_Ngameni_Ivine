@@ -15,10 +15,10 @@
         <label>Nombre d'adresses : </label>
         <input
           type="number"
-          name="address"
+          name="nb_adresses"
           min="1"
           max="10"
-          id="address"
+          
           placeholder="veuillez saisir les informations sur le nombe d'adresses"
           required
         />
