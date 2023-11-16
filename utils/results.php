@@ -8,7 +8,7 @@ require_once "../functions/validation.php";
 <?php
 var_dump($_POST);
 $infos = $_POST;
-echo "<form action='../pages/essaie.php' method='post'>";
+echo "<form action='../pages/confirmation.php' method='post'>";
 if(count($infos) > 0) {
     foreach($infos as $key => $value) {
         echo "<input type='text' name='$key' value='$value' readonly /> <br />";
