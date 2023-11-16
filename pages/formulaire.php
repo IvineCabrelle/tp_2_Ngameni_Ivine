@@ -10,10 +10,10 @@
         <hr>
         <div1 class="name-field">
         <?php
-             // Formulaire permettant d'enregistrer un nouvel utilisateur en fonction des adresses entrées
-        $address = $_POST['address'];
-        for ($i = 1; $i <= $address; $i++) {
-            echo "<br><br><h3>Address $i :</h3>
+// Formulaire permettant d'enregistrer un nouvel utilisateur en fonction des adresses entrées
+        $nb_adresses = $_POST['nb_adresses'];
+        for ($i = 1; $i <= $nb_adresses; $i++) {
+            echo "<br><br><h3>Address $i :</h3> 
         <div>
         <label for='street'>Street:</label> 
         <input type='text' name='street $i' id='street' maxlength='50' placeholder='Veuillez entrer votre street' required /><br><br> </div>
