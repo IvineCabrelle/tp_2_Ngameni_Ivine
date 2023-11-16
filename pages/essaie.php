@@ -16,8 +16,8 @@
        $conn = getDbConnection();
 
       // Boucle pour récupérer et afficher les adresses
-      $nb_adresses = $_POST['nb_adresses'];
-      for ($i = 1; $i <= $nb_adresses; $i++) {
+      $iMax = $_POST['address'];
+      for ($i = 1; $i <= $iMax; $i++) {
        $addresses[] = [
         'street' => $POST['street' . $i],
         'street_nb' => $POST['street_nb' . $i],
@@ -39,7 +39,7 @@
  
          // Formulaire pour valider les adresses
          echo '<form action="validate_addresses.php" method="post">';
-         echo '<input type="hidden" name="nb_adresses" value="' . $_POST['nb_adresses'] . '">';
+         echo '<input type="hidden" name="address" value="' . $_POST[' $iMax'] . '">';
          echo '<button type="submit">Valider les adresses</button></form>';
  
          // Fermeture de la connexion à la base de données
@@ -51,12 +51,12 @@
      }
  
      // Fonction pour enregistrer les données dans la base de données
-     function saveToDatabase($conn, $address) {
-         $street = $conn->real_escape_string($address['street']);
-         $street_nb = $conn->real_escape_string($address['street_nb']);
-         $type = $conn->real_escape_string($address['type']);
-         $city = $conn->real_escape_string($address['city']);
-         $zipcode = $conn->real_escape_string($address['zipcode']);
+     function saveToDatabase($conn, $query) {
+         $street = $conn->real_escape_string($query['street']);
+         $street_nb = $conn->real_escape_string($query['street_nb']);
+         $type = $conn->real_escape_string($query['type']);
+         $city = $conn->real_escape_string($query['city']);
+         $zipcode = $conn->real_escape_string($query['zipcode']);
  
          insertInstanceIntoTable($conn, $street, $street_nb, $type, $city, $zipcode);
      }
