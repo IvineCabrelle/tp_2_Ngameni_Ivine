@@ -18,7 +18,6 @@
           name="nb_adresses"
           min="1"
           max="10"
-          
           placeholder="veuillez saisir les informations sur le nombe d'adresses"
           required
         />
