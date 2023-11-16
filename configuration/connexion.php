@@ -13,4 +13,5 @@ if ($conn) {
 } else {
     echo "Error : Not connected to the $db database";
 }
+if ($server['re'])
 ?>
