@@ -15,7 +15,12 @@ if(count($data) > 0) {
         echo "<input type='text' name='$key' value='$value' readonly /> <br />";
     }
 }
+echo "<br/> <br />";
 echo "<button type='submit'>Confirmer</button>";
+echo "<br/> <br />";
+echo "<button type='reset'>Effacer</button>";
+echo "<br/> <br />";
+echo "<a href = ../pages/formulaire.php'>Retour</a>";
 echo "</form>";
 ?>
 </div>
