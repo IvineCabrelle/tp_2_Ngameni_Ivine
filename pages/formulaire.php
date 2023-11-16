@@ -8,13 +8,13 @@
     <form method='post' action='../utils/results.php'>
         <h2>Remplissez les adresses</h2>
         <hr><?php
-         $nb_adresses = $_POST['nb_adresses'];?>
+         $iMax = $_POST['address'];?>
         <div1 class="name-field"></div1>
             <label for='valeur' >Nombre de champs</label>>
-            <input type='number' name='valeur' id='valeur' value= "<?php echo "$nb_adresses"?>"
+            <input type='number' name='valeur' id='valeur' value= "<?php echo "$iMax"?>"
         <?php
 // Formulaire permettant d'enregistrer un nouvel utilisateur en fonction des adresses entrées
-        for ($i = 1; $i <= $nb_adresses; $i++) {
+        for ($i = 1; $i <= $iMax; $i++) {
             echo "<br><br><h3>Address $i :</h3> 
         <div>
         <label for='street'>Street:</label> 
