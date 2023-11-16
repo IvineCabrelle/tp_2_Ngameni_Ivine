@@ -2,11 +2,14 @@
 function create($data){
     global $conn;
     $query ="INSERT INTO 'address' ('id','street','street_nb','type','city','zipcode') VALUES (NULL,".$data['street'].", ".$data['street_nb'].", ".$data['type'].",".$data['city']."".$data['zipcode'].");";
+    if ($conn  !== TRUE) {
+        echo "Erreur lors de l'insertion dans la base de données : " . $conn;
+    } 
     $result =mysqli_query($conn,$query);
 
 }
 // Lecture des marqueurs (les 3 "?" dans la query)
-function createUser($data){
+function createAddress($data){
     global $conn;
     $query = "INSERT INTO address VALUES (NULL,?,?,?,?,?)";
 
@@ -22,7 +25,7 @@ function createUser($data){
     
     }
 }
-function updateUser($data){
+function updateAddress($data){
    // fonction pour changer la valeur intiale d'un utilisateur par une autre
         global $conn;
         $query = "UPDATE address set 
@@ -46,7 +49,7 @@ function updateUser($data){
          }
 }
 
-function deleteUser(int $id)
+function deleteAddress(int $id)
 {
     // fonction permettant de supprimer les informations d'un utilisateur juste en ayant son id
     global $conn;
@@ -64,13 +67,13 @@ function deleteUser(int $id)
         $result = mysqli_stmt_execute($stmt);
     }
 }
-function getUserById(int $id)
-{
-    global $conn;
-    $result = mysqli_query($conn, "SELECT * FROM address WHERE id = " . $id);
+ // Fonction pour enregistrer les données dans la base de données
+ function saveToDatabase($conn, $address) {
+    $street = $conn->real_escape_string($address['street']);
+    $street_nb = $conn->real_escape_string($address['street_nb']);
+    $type = $conn->real_escape_string($address['type']);
+    $city = $conn->real_escape_string($address['city']);
+    $zipcode = $conn->real_escape_string($address['zipcode']);
 
-    // avec fetch row : tableau indexé
-    $data = mysqli_fetch_assoc($result);
-
-    return $data;
-}
+    insertInstanceIntoTable($conn, $street, $street_nb, $type, $city, $zipcode);
+ }
