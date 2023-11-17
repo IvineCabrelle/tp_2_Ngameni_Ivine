@@ -1,6 +1,7 @@
 <?php
 require_once('../functions/crud.php');
-session_start();
+require_once "../configuration/connexion.php";
+//session_start();
 var_dump($_SESSION["formData"]);
 $newData=$_SESSION["formData"];
 for ($i = 1; $i <= $_SESSION['addressnb']; $i++){
