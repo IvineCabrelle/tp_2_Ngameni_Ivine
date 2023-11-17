@@ -6,16 +6,28 @@ require_once "../functions/validation.php";
 <h2>Veuillez confirmer vos informations</h2>
 <div>
 <?php
-
-$data = $_POST;
-echo "<form action='../pages/confirmation.php' method='post'>";
-if(count($data) > 0) {
-    foreach($data as $key => $value) {
+echo $_SESSION['addressnb'];
+var_dump($_POST);
+for ($i = 1; $i <= $_SESSION['addressnb']; $i++){
+    $_SESSION["formData"]=$_POST;
+    var_dump($_SESSION["formData"]);
+    $streetIsValid=streetIsValid($_POST["street$i"]);
+    $zipCodeIsValid =zipCodeIsValid($_POST["zipcode$i"]);
+}
+$infos = $_POST;
+echo "<form action='addToDB.php' method='post'>";
+if ($streetIsValid["isValid"] &&$zipCodeIsValid["isValid"]){
+if(count($infos) > 0) {
+    foreach($infos as $key => $value) {
         echo "<input type='text' name='$key' value='$value' readonly /> <br />";
     }
 }
+}else{
+    echo "error";
+}
+
 echo "<br/> <br />";
-echo "<button type='submit'>Confirmer</button>";
+echo "<a href ='addToDB.php'><button type='submit'>Confirmer</button></a>";
 echo "<br/>";
 echo "<button type='reset'>Effacer</button>";
 echo "<br/> <br />";
@@ -27,59 +39,3 @@ echo "<br/> <br />";
 </div>
 
 
-<!-- 
-<?php/*
-$iMax = $_POST['address'];
-if (isset($_POST)) {
-  echo'<br><br>';
-  var_dump($_POST);
-  echo'<br><br>';
-  switch ($_POST['address']) {
-    case 'formulaire';
-      //Validation des data dans $_POST
-$isValid =true;
-
-// username, email, pwd
-    if (isset($_POST['street $i'. $i])) {
-    $streetIsValid =streetIsValid ($_POST['street'. $i]);
-    echo '<br><br>';
-    var_dump($streetIsValid);
-    }
-      $newaddressData = [
-        'street'=>$_POST['street'. $i],
-        'street_nb'=>$_POST['street_nb'. $i],
-        'type'=>$_POST['type' .$i],
-        'city'=>$_POST['city'. $i],
-        'zipcode'=>$_POST['zipcode'. $i],
-      ];
-      // creation d'un user dans la DB
-    if ($isValid) {
-  echo '<br><br> Ça a marché je devrai avoir un  en nouvel addresse';
-  
-    $createAddress($newaddressData);
-    }else {
-    //redirect vers signUp page
-    header('Location: ../pages/formulaire.php');
-    exit;
-    }
-    $address = getAllUsers();
-
-    ?>
-    <a href="../pages/formulaire.php">Retour a la page Enregistrement</a>
-    <?php
-    $showData('Mes address avec le nouveau',$address);
-          break;
-        case 'formulaire':
-          # code...
-          break;
-        default:
-          // redirect vers index
-          break;
-      }
-    } else { //else de if isset $_POST
-      // redirect vers index.php
-      header('Location: ../index.php');
-    exit;
-    }
-*/    
-?> -->
