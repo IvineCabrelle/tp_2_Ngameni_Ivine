@@ -24,8 +24,6 @@ function createAddress($data) {
 
 
 
-
-
 function updateAddress($data){
    // fonction pour changer la valeur intiale d'un utilisateur par une autre
         global $conn;
@@ -42,7 +40,7 @@ function updateAddress($data){
             
             $result = mysqli_stmt_execute($stmt);
             echo "</br></br>";
-            echo "La valeur initiale a été changé";
+            echo "La valeur initiale a été changée";
             echo "</br></br>";
             var_dump($result);
             return $result;
@@ -68,15 +66,3 @@ function deleteAddress(int $id)
         $result = mysqli_stmt_execute($stmt);
     }
 }
-function getAllUsers()
-{
-    global $conn;
-    $result = mysqli_query($conn, "SELECT * FROM `address`");
-
-    $data = [];
-    $i = 0;
-    while ($rangeeData = mysqli_fetch_assoc($result)) {
-        $data[$i] = $rangeeData;
-        $i++;
-    };
-} 
