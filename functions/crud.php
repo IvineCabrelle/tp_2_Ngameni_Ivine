@@ -64,4 +64,15 @@ function deleteAddress(int $id)
         $result = mysqli_stmt_execute($stmt);
     }
 }
- 
+function getAllUsers()
+{
+    global $conn;
+    $result = mysqli_query($conn, "SELECT * FROM `address`");
+
+    $data = [];
+    $i = 0;
+    while ($rangeeData = mysqli_fetch_assoc($result)) {
+        $data[$i] = $rangeeData;
+        $i++;
+    };
+} 
