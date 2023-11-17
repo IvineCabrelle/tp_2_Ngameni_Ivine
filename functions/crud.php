@@ -6,22 +6,20 @@ function create($data){
 
 }
 // Lecture des marqueurs (les 3 "?" dans la query)
-function createAddress($data){
+function createAddress($data) {
     global $conn;
-    $query = "INSERT INTO address VALUES (NULL,?,?,?,?,?)";
+    $query="INSERT INTO address VALUES (NULL,?,?,?,?,?)";
+    If( $stmt=mysqli_prepare($conn, $query)){
+    /* Lecture des marqueurs */
+    mysqli_stmt_bind_param($stmt,"sisss",$data['street'],$data['street_nb'],$data['type'],$data['city'],$data['zipcode']);
+    /* Exécution de la requête*/
+    $result= mysqli_stmt_execute($stmt);
+    echo "<br> <br>";
+    echo"coucou ADRESSE AJOUTE";
+    echo "<br> <br>";
+    var_dump($result);
+    return $result;}};
 
-
-// en indiquant leur type ( s = string, i = integer)
-    if ($stmt=mysqli_prepare($conn,$query)){
-        mysqli_stmt_bind_param($stmt,"sisss",$data['street'],$data['street_nb'],$data['type'],$data['city'] ,$data['zipcode']);
-        $result = mysqli_stmt_execute($stmt);
-        echo "</br></br>";
-        echo "</br></br>";
-        var_dump($result);
-        echo "</br></br>";
-    
-    }
-}
 function updateAddress($data){
    // fonction pour changer la valeur intiale d'un utilisateur par une autre
         global $conn;
