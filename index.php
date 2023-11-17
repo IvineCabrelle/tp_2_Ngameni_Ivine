@@ -7,6 +7,11 @@
   </head>
   <link rel="stylesheet" type="text/css" href="./style css/style.css" />
   <body>
+    <?php
+  if (isset($_POST['address']) && $_POST['address'] == 'formulaire') {
+    $createAddress($_POST);
+}
+?>
     <form method="post" action="./pages/formulaire.php" name="form">
       <h1>Connexion d'adresses</h1>
       <p class="choix_adresse">Combien d'adresses avez-vous?</p>
@@ -27,6 +32,7 @@
       <div align="center">
         <button type="submit">Se connecter</button>
       </div>
+      
     </form>
   </body>
 </html>
