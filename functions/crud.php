@@ -15,10 +15,16 @@ function createAddress($data) {
     /* Exécution de la requête*/
     $result= mysqli_stmt_execute($stmt);
     echo "<br> <br>";
-    echo"coucou ADRESSE AJOUTE";
+    echo"coucou ADRESSE AJOUTÉE";
     echo "<br> <br>";
     var_dump($result);
-    return $result;}};
+    return $result;
+}
+};
+
+
+
+
 
 function updateAddress($data){
    // fonction pour changer la valeur intiale d'un utilisateur par une autre
