@@ -8,23 +8,28 @@
     <form method='post' action='../utils/results.php'>
         <h2>Remplissez les adresses</h2>
         <hr><?php
-         $iMax = $_POST['address'];?>
+        session_start();
+         $iMax = $_POST['address'];
+         echo $iMax;
+         $_SESSION['addressnb']=$_POST['address'];
+         echo$_SESSION['addressnb'];
+         ?>
         <div1 class="name-field"></div1>
             <label for='valeur' >Nombre de champs</label>>
-            <input type='number' name='valeur' id='valeur' value= "<?php echo "$iMax"?>"
+            <input type='number' name='valeur' id='valeur' value= "<?php echo"$iMax"?>"
         <?php
 // Formulaire permettant d'enregistrer un nouvel utilisateur en fonction des adresses entrées
         for ($i = 1; $i <= $iMax; $i++) {
             echo "<br><br><h3>Address $i :</h3> 
         <div>
         <label for='street'>Street:</label> 
-        <input type='text' name='street $i' id='street' maxlength='50' placeholder='Veuillez entrer votre street' required /><br><br> </div>
+        <input type='text' name='street$i' id='street' maxlength='50' placeholder='Veuillez entrer votre street' required /><br><br> </div>
         <div>
         <label for='street_nb'>Street Number:</label> 
-        <input type='number' name='street_nb $i' id='street_nb' placeholder='Veuillez entrer votre street_nb'required /><br><br> </div>
+        <input type='number' name='street_nb$i' id='street_nb' placeholder='Veuillez entrer votre street_nb'required /><br><br> </div>
         <div>
         <label for='type'>Type:</label>
-        <select name='type $i' id='type 'placeholder=' veuillez selectionner votre type' required >
+        <select name='type$i' id='type 'placeholder=' veuillez selectionner votre type' required >
             <option value='livraison'>Livraison</option>
             <option value='facturation'>Facturation</option>
             <option value='autre'>Autre</option>
@@ -32,7 +37,7 @@
         <div>
         <div1>
         <label for='city'>City:</label><div1>
-        <select name='city $i' id='city  placeholder='veuillez selectionner votre city'' required >
+        <select name='city$i' id='city  placeholder='veuillez selectionner votre city'' required >
             <option value='Montréal'>Montréal</option>
             <option value='Laval'>Laval</option>
             <option value='Toronto'>Toronto</option>
@@ -43,7 +48,7 @@
         <label for='zipcode'>Zipcode:</label></div1>
         <input
             type='text'
-            name='zipcode $i'
+            name='zipcode$i'
             id='zipcode'  
             placeholder='Veuillez entrer votre zipcode '  
         />
