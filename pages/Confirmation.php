@@ -1,12 +1,23 @@
- <!-- <?php
-//  require_once("../functions/crud.php");
-//  if (isset($_POST)){
-//     $nb_adresses=(int)$_POST['valeur'];
-//     for($i = 1; $i <= $nb_adresses; $i++)
-//     $data=[
-//         "street"=>$_POST["street $i"],
-//         "street_nb"=>$_POST["street_nb $i"],
-//     ];
-//     var_dump($data);
-//  }
- ?> -->
+<?php
+require_once ('functions/functions.php');
+require_once "functions/crud.php";
+require_once "./configuration/connexion.php";
+?>
+/* $server = 'localhost';
+<select name="user_id">
+<?php
+foreach ($addresses as $address) {
+    ?>
+
+    <option value="<?php echo $address['id']?>"><?php echo $address['street']?></option>
+
+<?php
+}
+?>
+
+</select>
+<?php
+
+$showData('My address',$address);
+
+?>
