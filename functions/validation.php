@@ -7,8 +7,6 @@ function  streetIsValid(string $street): array
         'msg' => ''
     ];
     echo '<br><br>';
-    echo strlen($street);
-
     if (strlen($street) > 50) {
         $result = [
             'isValid' => false,
@@ -24,8 +22,6 @@ function  typeIsValid(string $type): array
         'msg' => ''
     ];
     echo '<br><br>';
-    echo strlen($type);
-
     if (strlen($type) > 20) {
         $result = [
             'isValid' => false,
@@ -41,7 +37,6 @@ function zipCodeIsValid(string $zipcode): array
         'msg' => ''
     ];
     echo '<br><br>';
-    echo strlen($zipcode);
 
     if (strlen($zipcode) !=6 ) {
         $result = [
