@@ -13,15 +13,15 @@ function createAddress($data) {
     /* Lecture des marqueurs */
     mysqli_stmt_bind_param($stmt,"sisss",$data['street'],$data['street_nb'],$data['type'],$data['city'],$data['zipcode']);
     /* Exécution de la requête*/
+    // s=string , i= number or entier
     $result= mysqli_stmt_execute($stmt);
     echo "<br> <br>";
-    echo"coucou ADRESSE AJOUTÉE";
+    echo"Merci de nous voir fait confiance!!!Votre adresse a été ajoutée avec succès!! Un responsable vous contactera ultérieurament";
     echo "<br> <br>";
     var_dump($result);
     return $result;
 }
 };
-
 
 
 function updateAddress($data){
@@ -40,7 +40,7 @@ function updateAddress($data){
             
             $result = mysqli_stmt_execute($stmt);
             echo "</br></br>";
-            echo "La valeur initiale a été changée";
+            echo "La valeur initiale de votre adresse a été changée";
             echo "</br></br>";
             var_dump($result);
             return $result;
