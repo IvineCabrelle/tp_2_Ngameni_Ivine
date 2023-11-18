@@ -7,7 +7,7 @@ require_once "../functions/validation.php";
 <div>
 <?php
 echo $_SESSION['addressnb'];
-var_dump($_POST);
+
 for ($i = 1; $i <= $_SESSION['addressnb']; $i++){
     $_SESSION["formData"]=$_POST;
     var_dump($_SESSION["formData"]);
@@ -22,18 +22,17 @@ if(count($infos) > 0) {
         echo "<input type='text' name='$key' value='$value' readonly /> <br />";
     }
 }
-}else{
-    echo "error";
-}
-
+}else {
+    echo "error de connexion";
+    //redirect vers formulaire page
+    header('Location: ../pages/formulaire.php');
+    exit;}
+        
 echo "<br/> <br />";
 echo "<a href ='addToDB.php'><button type='submit'>Confirmer</button></a>";
 echo "<br/>";
-echo "<button type='reset'>Effacer</button>";
-echo "<br/> <br />";
 
 ?>
-<!-- <a href ="../pages/formulaire.php">Retour</a>; -->
 </form>;
 
 </div>
