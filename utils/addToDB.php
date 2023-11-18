@@ -1,8 +1,6 @@
 <?php
 require_once('../functions/crud.php');
 require_once "../configuration/connexion.php";
-//session_start();
-var_dump($_SESSION["formData"]);
 $newData=$_SESSION["formData"];
 for ($i = 1; $i <= $_SESSION['addressnb']; $i++){
     $newAddressData = [
@@ -12,7 +10,7 @@ for ($i = 1; $i <= $_SESSION['addressnb']; $i++){
         "city"=> $_SESSION["formData"]["city$i"],
         "zipcode"=> $_SESSION["formData"]["zipcode$i"],
     ];
-    //ajouter ladresse dans la base donnees
+    //l'ajout de l'adresse dans la base données
     createAddress($newAddressData);
 }
 ?>
