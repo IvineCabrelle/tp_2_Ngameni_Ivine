@@ -4,13 +4,16 @@ require_once "../functions/crud.php";
 require_once "../functions/validation.php";
 ?>
 <h2>Veuillez confirmer vos informations</h2>
+<head>
+<link rel="stylesheet" type="text/css" href="../style css/style3.css" />
+</head>
 <div>
 <?php
+echo "<b><center> Le nombre d'adresse que vous avez saisi est :</br>";
 echo $_SESSION['addressnb'];
 
 for ($i = 1; $i <= $_SESSION['addressnb']; $i++){
     $_SESSION["formData"]=$_POST;
-    var_dump($_SESSION["formData"]);
     $streetIsValid=streetIsValid($_POST["street$i"]);
     $zipCodeIsValid =zipCodeIsValid($_POST["zipcode$i"]);
 }
@@ -33,6 +36,7 @@ echo "<a href ='addToDB.php'><button type='submit'>Confirmer</button></a>";
 echo "<br/>";
 
 ?>
+</head>
 </form>;
 
 </div>
