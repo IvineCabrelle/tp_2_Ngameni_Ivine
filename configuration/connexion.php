@@ -4,7 +4,7 @@ $server = 'localhost';
 $userName = "root";
 $pwd = "";
 $db = "ecom1_tp2";
-
+// connection vers la base de données
 $conn = mysqli_connect($server, $userName, $pwd, $db);
 if ($conn) {
     echo "Connected to the $db database successfully";
