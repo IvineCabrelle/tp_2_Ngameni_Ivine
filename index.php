@@ -13,11 +13,11 @@
 }
 ?>
     <form method="post" action="./pages/formulaire.php" name="form">
-      <h1>Connexion d'adresses</h1>
-      <p class="choix_adresse">Combien d'adresses avez-vous?</p>
+      <h1><b>Connexion d'adresses</b></h1>
+      <p class="choix_adresse"><b>Combien d'adresses avez-vous?</b></p>
       <br />
       <div class="input">
-        <label for='address'>Nombre d'adresses : </label>
+        <label for='address'> <b> Nombre d'adresses : </b></label>
         <input
           type="number"
           name="address"
