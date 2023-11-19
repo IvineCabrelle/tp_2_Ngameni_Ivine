@@ -14,4 +14,5 @@ for ($i = 1; $i <= $_SESSION['addressnb']; $i++){
     ];
     //l'ajout de l'adresse dans la base données
     createAddress($newAddressData);
+
 }
