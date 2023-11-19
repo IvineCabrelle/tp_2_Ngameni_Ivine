@@ -10,9 +10,9 @@
         <hr><?php
         session_start();
          $iMax = $_POST['address'];
-         
+        
          $_SESSION['addressnb']=$_POST['address'];
-    
+        
          ?>
         <div1 class="name-field"></div1>
             <label for='valeur' ><b>Nombre de champs</b></label>
