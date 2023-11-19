@@ -1,6 +1,8 @@
 <?php
 require_once('../functions/crud.php');
 require_once "../configuration/connexion.php";
+// La page addToDb va permettre de faire d'envoyer nos informations vers la base de données
+
 $newData=$_SESSION["formData"];
 for ($i = 1; $i <= $_SESSION['addressnb']; $i++){
     $newAddressData = [
@@ -13,4 +15,3 @@ for ($i = 1; $i <= $_SESSION['addressnb']; $i++){
     //l'ajout de l'adresse dans la base données
     createAddress($newAddressData);
 }
-?>
