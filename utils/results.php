@@ -40,7 +40,7 @@ if(count($infos) > 0) {
     }
 }
 }else{
-    echo "erreur de connection ";
+    echo "erreur de connection. Une information n'a pas été bien écrite ";
     
 }
 
