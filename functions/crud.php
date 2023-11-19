@@ -13,16 +13,15 @@ function createAddress($data) {
     /* Lecture des marqueurs */
     mysqli_stmt_bind_param($stmt,"sisss",$data['street'],$data['street_nb'],$data['type'],$data['city'],$data['zipcode']);
     /* Exécution de la requête*/
-    // s=string , i= number or entier
+    // s=string , i= number or integer
     $result= mysqli_stmt_execute($stmt);
     echo "<br> <br>";
-    echo"Merci de nous voir fait confiance!!!Votre adresse a été ajoutée avec succès!! Un responsable vous contactera ultérieurament";
+    echo"<b> Merci de nous voir fait confiance!!!Votre adresse a été ajoutée avec succès!! Un responsable vous contactera ultérieurament</b>";
     echo "<br> <br>";
     var_dump($result);
     return $result;
 }
 };
-
 
 function updateAddress($data){
    // fonction pour changer la valeur intiale d'un utilisateur par une autre
