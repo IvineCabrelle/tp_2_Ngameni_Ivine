@@ -45,7 +45,8 @@ if(count($infos) > 0) {
 }
 
 echo "<br/> <br />";
-echo "<button type='submit'>Confirmer</button></a>";
+echo "<button type='submit'>Confirmer</button>";
+
 echo "<br/>";
 echo "<br/> <br />";
 
