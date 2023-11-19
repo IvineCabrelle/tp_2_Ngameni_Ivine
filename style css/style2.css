@@ -64,6 +64,14 @@ a:hover {
   text-align: justify;
   border: #17a2b8;
   font-family: "Times New Roman", Times, serif;
+  width: 20%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  text-align: center;
 }
 a {
   padding-top: 60px;
